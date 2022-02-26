@@ -62,8 +62,7 @@ async function initServer(): Promise<void> {
   initRoutes(server);
 
   return new Promise((resolve, reject) => {
-    server.listen(process.env.PORT, (err) => {
-      if (err) return reject(err);
+    server.listen(process.env.PORT, () => {
       logger.info({ msg: `Server running`, port: process.env.PORT });
       resolve();
     });
